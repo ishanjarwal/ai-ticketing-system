@@ -5,7 +5,8 @@ export const UserRoleValues = ["user", "moderator", "admin"] as const;
 const userSchema = new Schema(
   {
     email: { type: String, required: true, unique: true, index: true },
-    password: { type: String, required: true, select: false },
+    password: { type: String, required: true },
+    name: { type: String, required: true },
     role: {
       type: String,
       default: "user",
